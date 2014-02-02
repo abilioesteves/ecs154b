@@ -1,11 +1,13 @@
 Abilio Esteves Calegario de Oliveira, 999550263
-Boris Poutivski, *********
+Boris Poutivski, 996730895
 
 ------------------------------------------------------------------------
       
 No issues to report.
 
 ------------------------------------------------------------------------
+
+Boolean not simplified to make debugging easier, but can be easily simplified with the provided software.
 
 Boolean equations for ALUControl:
 
