@@ -1,4 +1,5 @@
-addi $1, $0, 5              # $1 = 5
-sw $1, 8($0)		    # memory[8] = $1
-lw $2, 8($0)	            # $2 = memory[8]
-sw $2, 4($0)	            # memory[4] = $2. Forwarding should occur.
+addi $1, $0, 4		# $1 = 4
+addi $2, $0, 4		# $2 = 4
+add $3, $1, $2		# $3 = $1 + $2 = 8
+add $4, $3, $3		# $4 = $3 + $3 = 16
+
