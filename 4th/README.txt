@@ -1,11 +1,17 @@
 Abilio Esteves Calegario de Oliveira, 999550263
 Boris Poutivski, 996730895
 
-------------------------------------------------------------------------
+========
+Issues:
+========
       
-No issues to report.
+No issues to report, CPU works on all tests.
 
-------------------------------------------------------------------------
+===============================================
+Control unit and ALU Control unit explanation:
+===============================================
+
+SAME AS LAB 3 for ALU Control and same as Lab 2 for Control.
 
 Boolean not simplified to make debugging easier, but can be easily simplified with the provided software.
 
@@ -19,4 +25,6 @@ o2  = ~((~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 ~i2 ~i1 ~i0) + (i31 ~i30 ~i29 
 
 o3 = ~((~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 ~i2 ~i1 ~i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 ~i2 i1 ~i0) + (i31 ~i30 ~i29 ~i28 i27 i26) + (~i31 ~i30 i29 ~i28 i27 i26) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 i2 ~i1 ~i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 i2 ~i1 i0) + (~i31 ~i30 ~i29 i28 ~i27 ~i26) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 i3 ~i2 i1 ~i0) + (~i31 ~i30 i29 ~i28 ~i27 ~i26) + (~i31 ~i30 i29 i28 ~i27 ~i26)) ((~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 i2 i1 i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 ~i5 ~i4 ~i3 ~i2 ~i1 ~i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 ~i5 ~i4 ~i3 ~i2 i1 ~i0))
 
-------------------------------------------------------------------------
+===============
+SW forwarding:
+===============
