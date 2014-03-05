@@ -26,5 +26,25 @@ o2  = ~((~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 ~i2 ~i1 ~i0) + (i31 ~i30 ~i29 
 o3 = ~((~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 ~i2 ~i1 ~i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 ~i2 i1 ~i0) + (i31 ~i30 ~i29 ~i28 i27 i26) + (~i31 ~i30 i29 ~i28 i27 i26) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 i2 ~i1 ~i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 i2 ~i1 i0) + (~i31 ~i30 ~i29 i28 ~i27 ~i26) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 i3 ~i2 i1 ~i0) + (~i31 ~i30 i29 ~i28 ~i27 ~i26) + (~i31 ~i30 i29 i28 ~i27 ~i26)) ((~i31 ~i30 ~i29 ~i28 ~i27 ~i26 i5 ~i4 ~i3 i2 i1 i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 ~i5 ~i4 ~i3 ~i2 ~i1 ~i0) + (~i31 ~i30 ~i29 ~i28 ~i27 ~i26 ~i5 ~i4 ~i3 ~i2 i1 ~i0))
 
 ===============
-SW forwarding:
+Forwarding:
 ===============
+
+Forward A = (Ex/Mem.RegWrite AND Ex/Mem.Rd == ID/EX.rs AND Ex/Mem.Rd != ZERO)  concatenated with (Ex/Mem.RegWrite AND Mem/WB.Rd == ID/Ex.rs AND Mem/WB.Rd != ZERO)
+
+Forward A then selects the correct value for the selector of MUX A: Rs, MEM or WB;
+
+Forward B = MUX 1 = (Ex/Mem.RegWrite AND Ex/Mem.Rd == ID/EX.rt AND Ex/Mem.Rd != ZERO)  concatenated with (Ex/Mem.RegWrite AND Mem/WB.Rd == ID/Ex.rt AND Mem/WB.Rd != ZERO)
+
+Forward B then selects the correct value for the selector of MUX B: Rt, MEM or WB;
+
+===============
+SW Forwarding:
+===============
+
+MEM/WB_ForwardMem = (SW AND (MEM/WB.RegisterRd == EX/MEM.RegisterRd)AND MEM/WB.RegWrite) concatenated with (SW AND (MEM/WB.RegisterRd == EX/MEM.RegisterRd)AND MEM/WB.ReadMem) 
+
+where SW is true if a SW operation is identified in the EX/MEM stage;
+
+MEM/WB_ForwardMem is then used to select the proper value for the MUX in the MEM stage.
+
+
