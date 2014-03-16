@@ -1676,7 +1676,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="contents">addr/data: 8 32
 20210001 0 0 0 20420002 0 0 0
 20630003 0 0 0 20240005 0 0 0
-20a50006 7*0 10a40009 39*0 ffffffff 79*0 1000ffff
+20a50006 7*0 10a40009 0 0 0 20210002 35*0
+ffffffff 79*0 1000ffff
 </a>
     </comp>
     <comp lib="0" loc="(550,260)" name="Tunnel">
@@ -3170,6 +3171,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(290,350)" to="(290,540)"/>
     <wire from="(460,100)" to="(460,120)"/>
     <wire from="(510,160)" to="(510,210)"/>
+    <wire from="(340,360)" to="(340,370)"/>
     <wire from="(480,160)" to="(480,180)"/>
     <wire from="(750,120)" to="(750,230)"/>
     <wire from="(550,430)" to="(550,520)"/>
